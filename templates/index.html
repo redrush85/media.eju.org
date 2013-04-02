@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load youtube_filter %}
+{% load thumbnail %}
+{% block title %}{% trans "Main" %}{% endblock %}
+{% block content %}
+<h2 class="zag">{% trans "Albums" %}</h2>
+{% if lastalbums %}
+{% for album in lastalbums %}
+<div class=itemm>
+<a href="{% url viewalbum album.slug %}">
+    {% thumbnail album.albumimage "180x134" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+    {% endthumbnail %}
+
+    {{ album.title|truncatechars:50 }}</a>
+</div>
+{% endfor %}
+{% endif %}
+<div style="clear: left"></div>
+<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallalbums %}">More Albums</a></span></div>
+
+<h2 class="zag">{% trans "Last Videos" %}</h2>
+{% if lastvideos %}
+<div>
+{% for video in lastvideos %}
+<div class=itemm>
+<a href="{% url viewvideo video.slug %}"><img src="{{ video.youtube_link|youthumbnail:'s' }}"/>{{ video.title|truncatechars:50 }}</a>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+<div style="clear: left"></div>
+<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallvideos %}">More Videos</a></span></div>
+
+<h2 class="zag">{% trans "Last Photos" %}</h2>
+{% if lastphotos %}
+<div>
+{% for photo in lastphotos %}
+<div class=itemm>
+<a href="{% url viewphoto photo.slug %}">
+    {% thumbnail photo.image "180x134" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+    {% endthumbnail %}
+
+    {{ photo.title|truncatechars:50 }}</a>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+
+<div style="clear: left"></div>
+<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallphotos %}">More Photos</a></span></div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% block title %}{% trans "Albums" %}{% endblock %}
+{% block content %}
+<h2 class="zag">{% trans "EJU Media Albums" %}</h2>
+    {% for album in albums %}
+<div class=item>
+<h2 class="zag"><a href="{% url viewalbum album.slug %}">{{ album.title }}</a></h2>
+<a href="{% url viewalbum album.slug %}">
+    {% thumbnail album.albumimage "180x134" crop="center" as im %}
+        <img class="img-rounded" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+    {% endthumbnail %}
+
+
+    {{ album.description|truncatechars:160 }}<a class="btn" href="{% url viewalbum album.slug %}">{% trans "View" %}</a></div>
+
+    {% empty %}
+        <p>{% trans "Sorry, no albums in this section!" %}</p>
+    {% endfor %}
+
+<div style="clear: left"></div>
+
+    <div class="pager">
+        <ul>
+            <li {% if not albums.has_previous %}class="disabled"{% endif %}><a href="?page={{ albums.previous_page_number }}">&larr; {% trans "Prev" %}</a></li>
+            <li {% if not albums.has_next %}class="disabled"{% endif %}><a href="?page={{ albums.next_page_number }}">{% trans "Next" %} &rarr;</a></li>
+        </ul>
+    </div>
+
+{% endblock %}

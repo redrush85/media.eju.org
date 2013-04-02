@@ -1,0 +1,24 @@
+<html>
+<body>
+<h1>API {{ api.api_name }}</h1>
+    <table class='tastypie-api' border='1'>
+        <tr><th>Resource</th><th>url</th><th>Structure</th><th>Description</th></tr>
+        {% for name, resource in resources.items %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>
+                    <a href='{{ resource.list_endpoint }}?format=json'>
+                    {{ resource.list_endpoint }}</a>
+                </td>
+                <td>
+                    <a href='{{ resource.schema }}?format=json'>
+                    {{ resource.schema }}</a>
+                </td>
+                <td>
+                    {{ resource.doc }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

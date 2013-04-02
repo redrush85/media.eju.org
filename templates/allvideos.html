@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load youtube_filter %}
+{% block title %}{% trans "Videos" %}{% endblock %}
+{% block content %}
+<h2 class="zag">{% trans "EJU Media Videos" %}</h2>
+    {% for video in videos %}
+
+<div class=item>
+<a href="{% url viewvideo video.slug %}">
+<img src="{{ video.youtube_link|youthumbnail:'l' }}"/>
+<h2 class="zag">{{ video.title|truncatechars:50 }}</h2></a>
+{{ video.description|truncatechars:145 }}
+</div>
+    {% empty %}
+        <p>{% trans "Sorry, no videos in this category!" %}</p>
+    {% endfor %}
+    <div class="pager">
+        <ul>
+            <li {% if not videos.has_previous %}class="disabled"{% endif %}><a href="?page={{ videos.previous_page_number }}">&larr; {% trans "Prev" %}</a></li>
+            <li {% if not videos.has_next %}class="disabled"{% endif %}><a href="?page={{ videos.next_page_number }}">{% trans "Next" %} &rarr;</a></li>
+        </ul>
+    </div>
+
+{% endblock %}

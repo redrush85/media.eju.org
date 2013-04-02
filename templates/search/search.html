@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load thumbnail %}
+{% load youtube_filter %}
+{% block title %}{% trans "Search" %}{% endblock %}
+{% block content %}
+    <h2 class="zag">{% trans "Search" %}</h2>
+
+    <form method="get" action=".">
+        Search: {{ form.q }}
+        <input type="submit" value="Search">
+    </form>
+
+    {% if query %}
+        <h3>Results</h3>
+
+        {% for result in page.object_list %}
+
+            <div class=item>
+
+                <a href="{{ result.object.get_absolute_url }}">
+                    {% if result.object.image %}
+                        {% thumbnail result.object.image "180x134" crop="center" as im %}
+                            <img class="img-rounded" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                    {% elif result.object.albumimage %}
+                        {% thumbnail result.object.albumimage "180x134" crop="center" as im %}
+                            <img class="img-rounded" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                    {% elif result.object.youtube_link %}
+                        <img src="{{ result.object.youtube_link|youthumbnail:'s' }}"/>
+                    {% endif %}
+                    <h2 class="zag">{{ result.object.title|truncatechars:50 }}</h2></a>
+                {{ result.object.description|truncatechars:150 }}
+                </a>
+            </div>
+        {% empty %}
+            <p>No results found.</p>
+        {% endfor %}
+
+        {% if page.has_previous or page.has_next %}
+            <div class="pager">
+                <ul>
+                {% if page.has_previous %}
+                    <li><a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&larr; {% trans "Prev" %}
+                {% if page.has_previous %}</a></li>{% endif %}
+
+                {% if page.has_next %}<li><a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}
+                {% trans "Next" %} &rarr;{% if page.has_next %}</a></li>{% endif %}
+                </ul>
+            </div>
+        {% endif %}
+    {% else %}
+        {# Show some example queries to run, maybe query syntax, something else? #}
+    {% endif %}
+
+{% endblock %}

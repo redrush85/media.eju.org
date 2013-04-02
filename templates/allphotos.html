@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% block title %}{% trans "Photos" %}{% endblock %}
+{% block content %}
+
+
+<h2 class="zag">{% trans "EJU Media Photos" %}</h2>
+    {% for photo in photos %}
+
+<div class=item>
+
+<a href="{% url viewphoto photo.slug %}">
+    {% thumbnail photo.image "180x134" crop="center" as im %}
+        <img class="img-rounded" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+    {% endthumbnail %}
+
+<h2 class="zag">{{ photo.title|truncatechars:50 }}</h2></a>
+{{ photo.description|truncatechars:150 }}
+{% trans "Category" %}: <a href="{% url viewphotocategory photo.category.id %}">{{ photo.category }}</a>
+</div>
+
+    {% empty %}
+        <p>{% trans "Sorry, no photos in this category!" %}</p>
+    {% endfor %}
+    <div class="pager">
+        <ul>
+            <li {% if not photos.has_previous %}class="disabled"{% endif %}><a href="?page={{ photos.previous_page_number }}">&larr; {% trans "Prev" %}</a></li>
+            <li {% if not photos.has_next %}class="disabled"{% endif %}><a href="?page={{ photos.next_page_number }}">{% trans "Next" %} &rarr;</a></li>
+        </ul>
+    </div>
+{% endblock %}

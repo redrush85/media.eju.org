@@ -1,0 +1,4 @@
+/media/cache/*
+/media/images/*
+/whoosh_index/*
+.idea/*

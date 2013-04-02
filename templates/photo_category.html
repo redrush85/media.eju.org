@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load thumbnail %}
+{% block title %}{{ category.title }}{% endblock %}
+{% block content %}
+<h2 class="zag">{{ category.title }}</h2>
+    {% for photo in photos %}
+
+<div class=item>
+<h2 class="zag"><a href="{% url viewphoto photo.slug %}">{{ photo.title }}</a></h2>
+<a href="{% url viewphoto photo.slug %}">
+    {% thumbnail photo.image "180x134" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+    {% endthumbnail %}
+</a>{{ photo.description|truncatechars:160 }}<a class="btn" href="{% url viewphoto photo.slug %}">{% trans "View" %}</a></div>
+
+    {% empty %}
+        <p>{% trans "Sorry, no photos in this category!" %}</p>
+    {% endfor %}
+    <div class="pager">
+        <ul>
+            <li {% if not photos.has_previous %}class="disabled"{% endif %}><a href="?page={{ photos.previous_page_number }}">&larr; {% trans "Prev" %}</a></li>
+            <li {% if not photos.has_next %}class="disabled"{% endif %}><a href="?page={{ photos.next_page_number }}">{% trans "Next" %} &rarr;</a></li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% if objects %}
+<div id="category_menu" class="opened"><ul>
+    {% for object in objects %}
+        {% url viewphotocategory object.id as objurl %}
+        {% if objurl %}
+            <li><a href="{{ objurl }}">{{ object.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul></div>
+{% endif %}
+
