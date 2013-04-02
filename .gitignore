@@ -1,4 +1,5 @@
 /media/cache/*
+*.pyc
 /media/images/*
 /whoosh_index/*
 .idea/*
