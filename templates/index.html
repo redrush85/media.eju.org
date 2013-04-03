@@ -18,7 +18,7 @@
 {% endfor %}
 {% endif %}
 <div style="clear: left"></div>
-<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallalbums %}">More Albums</a></span></div>
+<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallalbums %}">{% trans "More Albums" %}</a></span></div>
 
 <h2 class="zag">{% trans "Last Videos" %}</h2>
 {% if lastvideos %}
@@ -31,7 +31,7 @@
 </div>
 {% endif %}
 <div style="clear: left"></div>
-<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallvideos %}">More Videos</a></span></div>
+<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallvideos %}">{% trans "More Videos" %}</a></span></div>
 
 <h2 class="zag">{% trans "Last Photos" %}</h2>
 {% if lastphotos %}
@@ -50,6 +50,6 @@
 {% endif %}
 
 <div style="clear: left"></div>
-<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallphotos %}">More Photos</a></span></div>
+<div class="mod_nav_bg"><span class="mod_nav_more alignRight"><a href="{% url viewallphotos %}">{% trans "More Photos" %}</a></span></div>
 
 {% endblock %}

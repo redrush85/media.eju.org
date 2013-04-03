@@ -355,7 +355,7 @@ a.catalog99, a:link .catalog99, .catalog99
                 <div id="header_news_m_r">
                     <form action="/search/"  method="get" id="ecjc-global-search-input-main-form">
                         <div style="margin-top:14px;"><div class="form-item" id="edit-global-input-wrapper">
-                            <input type="text" maxlength="128" name="q" id="edit-global-input" size="60" value="" />
+                            <input type="text" maxlength="128" name="q" id="edit-global-input" size="60" value="{{ form.q.value }}" />
                         </div>
                             <input type="image" id="edit-submit-1"  class="form-submit search_btn" src="http://eju.org/sites/www.eju.org/themes/ecjc_main/images/search_btn.gif" />
                         </div></form>
@@ -413,9 +413,7 @@ a.catalog99, a:link .catalog99, .catalog99
             </div><!-- #content-->
 
             <div class="sidebar right_cr" id="sideRight">
-
-
-                {% nav_categorieslist %}
+	        {% nav_categorieslist %}
                 {% block sidebar %}
                     <!-- <img src="http://www.eju.org/sites/www.eju.org/themes/ecjc_main/images/1new.jpg"><br><br> -->
                     <img src="http://www.eju.org/sites/www.eju.org/themes/ecjc_main/images/911_banner.jpg"><br><br>

@@ -4,15 +4,10 @@
 {% load youtube_filter %}
 {% block title %}{% trans "Search" %}{% endblock %}
 {% block content %}
-    <h2 class="zag">{% trans "Search" %}</h2>
 
-    <form method="get" action=".">
-        Search: {{ form.q }}
-        <input type="submit" value="Search">
-    </form>
+    <h2 class="zag">{% trans "Results" %}</h2>
 
     {% if query %}
-        <h3>Results</h3>
 
         {% for result in page.object_list %}
 
@@ -35,7 +30,7 @@
                 </a>
             </div>
         {% empty %}
-            <p>No results found.</p>
+            <p>{% trans "No results found." %}</p>
         {% endfor %}
 
         {% if page.has_previous or page.has_next %}
@@ -51,7 +46,8 @@
             </div>
         {% endif %}
     {% else %}
-        {# Show some example queries to run, maybe query syntax, something else? #}
+        <p>{% trans "No results found." %}</p>
     {% endif %}
 
 {% endblock %}
+

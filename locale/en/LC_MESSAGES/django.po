@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-07 09:36+0000\n"
+"POT-Creation-Date: 2013-04-03 05:57-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ejumedia/settings.py:35
+#: ejumedia/settings.py:39
 msgid "English"
 msgstr ""
 
-#: ejumedia/settings.py:36
+#: ejumedia/settings.py:40
 msgid "Russian"
 msgstr ""
 
-#: templates/allalbums.html:3 templates/base.html:6 templates/index.html:7
+#: templates/allalbums.html:4 templates/base.html:6 templates/index.html:7
 msgid "Albums"
 msgstr ""
 
@@ -33,41 +33,40 @@ msgstr ""
 msgid "EJU Media Albums"
 msgstr ""
 
-#: templates/allalbums.html:12 templates/allphotos.html:17
-#: templates/allvideos.html:13 templates/page_album.html:16
-#: templates/photo_category.html:16
+#: templates/allalbums.html:16 templates/page_album.html:16
+#: templates/photo_category.html:15
 msgid "View"
 msgstr ""
 
-#: templates/allalbums.html:15
+#: templates/allalbums.html:19
 msgid "Sorry, no albums in this section!"
 msgstr ""
 
-#: templates/allalbums.html:20 templates/allphotos.html:25
-#: templates/allvideos.html:21 templates/page_album.html:24
-#: templates/photo_category.html:24
+#: templates/allalbums.html:26 templates/allphotos.html:28
+#: templates/allvideos.html:20 templates/page_album.html:23
+#: templates/photo_category.html:22 templates/search/search.html:40
 msgid "Prev"
 msgstr ""
 
-#: templates/allalbums.html:21 templates/allphotos.html:26
-#: templates/allvideos.html:22 templates/page_album.html:25
-#: templates/photo_category.html:25
+#: templates/allalbums.html:27 templates/allphotos.html:29
+#: templates/allvideos.html:21 templates/page_album.html:24
+#: templates/photo_category.html:23 templates/search/search.html:44
 msgid "Next"
 msgstr ""
 
-#: templates/allphotos.html:3 templates/base.html:5
+#: templates/allphotos.html:4 templates/base.html:5
 msgid "Photos"
 msgstr ""
 
-#: templates/allphotos.html:6
+#: templates/allphotos.html:8
 msgid "EJU Media Photos"
 msgstr ""
 
-#: templates/allphotos.html:16
+#: templates/allphotos.html:20
 msgid "Category"
 msgstr ""
 
-#: templates/allphotos.html:21 templates/photo_category.html:20
+#: templates/allphotos.html:24 templates/photo_category.html:18
 msgid "Sorry, no photos in this category!"
 msgstr ""
 
@@ -75,7 +74,7 @@ msgstr ""
 msgid "Videos"
 msgstr ""
 
-#: templates/allvideos.html:7
+#: templates/allvideos.html:6
 msgid "EJU Media Videos"
 msgstr ""
 
@@ -83,7 +82,7 @@ msgstr ""
 msgid "Sorry, no videos in this category!"
 msgstr ""
 
-#: templates/base.html:3 templates/base.html.py:8 templates/index.html:4
+#: templates/base.html:3 templates/base.html.py:8 templates/index.html:5
 msgid "Main"
 msgstr ""
 
@@ -99,23 +98,35 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: templates/base.html:267
+#: templates/base.html:429
 msgid "Change language"
 msgstr ""
 
 #: templates/index.html:21
+msgid "More Albums"
+msgstr ""
+
+#: templates/index.html:23
 msgid "Last Videos"
 msgstr ""
 
-#: templates/index.html:35
+#: templates/index.html:34
+msgid "More Videos"
+msgstr ""
+
+#: templates/index.html:36
 msgid "Last Photos"
 msgstr ""
 
-#: templates/page_album.html:20
+#: templates/index.html:53
+msgid "More Photos"
+msgstr ""
+
+#: templates/page_album.html:19
 msgid "Sorry, no photos in this album!"
 msgstr ""
 
-#: templates/page_photo.html:13 templates/page_video.html:13
+#: templates/page_photo.html:12 templates/page_video.html:12
 msgid "Tags"
 msgstr ""
 
@@ -123,6 +134,18 @@ msgstr ""
 msgid "Photo it not allowed by moderator"
 msgstr ""
 
-#: templates/page_video.html:17
+#: templates/page_video.html:16
 msgid "Video it not allowed by moderator"
+msgstr ""
+
+#: templates/search/search.html:5
+msgid "Search"
+msgstr ""
+
+#: templates/search/search.html:8
+msgid "Results"
+msgstr ""
+
+#: templates/search/search.html:33 templates/search/search.html.py:49
+msgid "No results found."
 msgstr ""
