@@ -7,12 +7,12 @@
     {% for photo in photos %}
 
 <div class=item>
-<h2 class="zag"><a href="{% url viewphoto photo.slug %}">{{ photo.title }}</a></h2>
+<h2 class="zag"><a href="{% url viewphoto photo.slug %}">{{ photo.title|truncatechars:35  }}</a></h2>
 <a href="{% url viewphoto photo.slug %}">
     {% thumbnail photo.image "180x134" crop="center" as im %}
         <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
     {% endthumbnail %}
-</a>{{ photo.description|truncatechars:160 }}<a class="btn" href="{% url viewphoto photo.slug %}">{% trans "View" %}</a></div>
+</a>{{ photo.description|truncatechars:140 }}<a class="btn" href="{% url viewphoto photo.slug %}">{% trans "View" %}</a></div>
 
     {% empty %}
         <p>{% trans "Sorry, no photos in this category!" %}</p>

@@ -6,7 +6,7 @@
     <h2 class="zag">{{ album.title }}</h2>
     {% for photo in photos %}
         <div class=item>
-            <h2 class="zag"><a href="{% url viewphoto photo.slug %}">{{ photo.title }}</a></h2>
+            <h2 class="zag"><a href="{% url viewphoto photo.slug %}">{{ photo.title|truncatechars:35 }}</a></h2>
             <a href="{% url viewphoto photo.slug %}">
                 {% thumbnail photo.image "180x134" crop="center" as im %}
                     <img class="img-rounded" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">

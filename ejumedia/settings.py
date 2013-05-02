@@ -36,10 +36,12 @@ TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
-    ('en', _('English')),
     ('ru', _('Russian')),
+    ('en', _('English')),
 
 )
+
+DEFAULT_LANGUAGE = 1
 
 LOCALE_PATHS=[PROJECT_DIR + '/../locale',]
 
@@ -144,6 +146,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'haystack',
     'tastypie',
+    'rosetta',
 )
 
 # A sample logging configuration. The only tangible logging

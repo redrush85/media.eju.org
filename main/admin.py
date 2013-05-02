@@ -18,7 +18,7 @@ class MediaVideoNodeAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'description', 'preview', 'created_at', 'is_active', 'language')
     ordering = ('-id',)
     list_filter = ('category', 'created_at', 'language')
-    list_per_page = 10
+    list_per_page = 20
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ['title']
     date_hierarchy = 'created_at'
@@ -27,7 +27,7 @@ class MediaPhotoNodeAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ('title', 'category', 'preview', 'created_at', 'is_active', 'language')
     ordering = ('-id',)
     list_filter = ('category', 'created_at', 'language')
-    list_per_page = 10
+    list_per_page = 20
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ['title']
     date_hierarchy = 'created_at'
@@ -37,7 +37,7 @@ class MediaAlbumAdmin(AdminImageMixin, admin.ModelAdmin):
     ordering = ('-id',)
     #raw_id_fields = ('images',)
     filter_horizontal = ('images',)
-    list_per_page = 10
+    list_per_page = 20
     list_filter = ('created_at', 'language')
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ['title']

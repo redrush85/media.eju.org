@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response, get_object_or_404, RequestContext 
 from django.utils.translation import ugettext as _
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template.response import TemplateResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from main.models import *
@@ -139,3 +139,20 @@ def getimage(request):
                      'message': photo.preview()}
     
   return HttpResponse(json.dumps(response_data), mimetype="application/json")
+  
+  
+def langredirect(request, page):
+    """ 
+    Patched for Get method 
+    """ 
+    lang_code = 'ru'
+    next = page
+    if not next: 
+	next = '/' 
+    response = HttpResponseRedirect('/'+next) 
+    if lang_code : 
+	if hasattr(request, 'session'): 
+    	    request.session['django_language'] = lang_code 
+        else: 
+            response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code) 
+    return response 

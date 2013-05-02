@@ -15,7 +15,7 @@
         <img class="img-rounded" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
     {% endthumbnail %}
 
-<h2 class="zag">{{ photo.title|truncatechars:50 }}</h2></a>
+<h2 class="zag">{{ photo.title|truncatechars:35 }}</h2></a>
 {{ photo.description|truncatechars:150 }}
 {% trans "Category" %}: <a href="{% url viewphotocategory photo.category.id %}">{{ photo.category }}</a>
 </div>

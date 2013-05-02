@@ -368,20 +368,28 @@ a.catalog99, a:link .catalog99, .catalog99
 
 
 
-
-
         <!-- menu-->
         <div id="header_b_bg">
             <div id="main_menu">
                 <div id="main_menu_l">
                     <ul class="megamenu" style="display: block; ">
+                    {% if LANGUAGE_CODE == 'ru' %}
+                        <li class="mm-item" style="float: left; "><a href="http://www.eju.org/ru" class="mm-item-link">EJU.ORG</a></li>
+                        <li class="mm-item" style="float: left; "><a href="{% url homepage %}" class="mm-item-link">{{ t_main }}</a></li>
+                        <li class="mm-item" style="float: left; "><a href="{% url viewallvideos %}" class="mm-item-link">{{ t_videos }}</a></li>
+                        <li class="mm-item" style="float: left; "><a href="{% url viewallphotos %}" class="mm-item-link">{{ t_photos }}</a></li>
+                        <li class="mm-item" style="float: left; "><a href="{% url viewallalbums %}" class="mm-item-link">{{ t_albums }}</a></li>
+                        <li class="mm-item" style="float: left; "><a href="http://www.eju.org/calendar" class="mm-item-link">{{ t_calendar }}</a></li>
+                        <li class="last mm-item" style="float: left; "><a href="http://www.eju.org/ru/about" class="last mm-item-link">{{ t_about }}</a></li>
+                    {% else %}
                         <li class="mm-item" style="float: left; "><a href="http://www.eju.org" class="mm-item-link">EJU.ORG</a></li>
                         <li class="mm-item" style="float: left; "><a href="{% url homepage %}" class="mm-item-link">{{ t_main }}</a></li>
                         <li class="mm-item" style="float: left; "><a href="{% url viewallvideos %}" class="mm-item-link">{{ t_videos }}</a></li>
                         <li class="mm-item" style="float: left; "><a href="{% url viewallphotos %}" class="mm-item-link">{{ t_photos }}</a></li>
                         <li class="mm-item" style="float: left; "><a href="{% url viewallalbums %}" class="mm-item-link">{{ t_albums }}</a></li>
                         <li class="mm-item" style="float: left; "><a href="http://www.eju.org/calendar" class="mm-item-link">{{ t_calendar }}</a></li>
-                        <li class="last mm-item" style="float: left; "><a href="http://www.eju.org//about" class="last mm-item-link">{{ t_about }}</a></li>
+                        <li class="last mm-item" style="float: left; "><a href="http://www.eju.org/about" class="last mm-item-link">{{ t_about }}</a></li>
+                    {% endif %}
                     </ul>
                 </div>
                 <div id="main_menu_r">
@@ -416,7 +424,11 @@ a.catalog99, a:link .catalog99, .catalog99
 	        {% nav_categorieslist %}
                 {% block sidebar %}
                     <!-- <img src="http://www.eju.org/sites/www.eju.org/themes/ecjc_main/images/1new.jpg"><br><br> -->
-                    <img src="http://www.eju.org/sites/www.eju.org/themes/ecjc_main/images/911_banner.jpg"><br><br>
+                    {% if LANGUAGE_CODE == 'ru' %}
+                	<img src="http://www.eju.org/sites/www.eju.org/themes/ecjc_main/images/911_banner_ru.jpg"><br><br>
+                    {% else %}
+                	<img src="http://www.eju.org/sites/www.eju.org/themes/ecjc_main/images/911_banner.jpg"><br><br>
+		    {% endif %}
 <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Feuropeanjewishunion&amp;width=300&amp;height=400&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color=white&amp;header=false&amp;appId=303843979657009" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:400px;" allowTransparency="true"></iframe>
 <br><br>
                 {% endblock %}
@@ -445,35 +457,60 @@ a.catalog99, a:link .catalog99, .catalog99
 
                 <div id="footer_row_b">
                     <div class="item" id="cols-1fb">
-                        <p class="ftitle_b">FOLLOW US ON TWITTER</p>
+                        <p class="ftitle_b">{% trans "FOLLOW US ON TWITTER" %}</p>
                         <div id="cols-1fb-twitts"><!-- #here js will be output twitts --></div>
-                        <p><a href="http://twitter.com/jewisheurope"><strong>More Twitts</strong></a></p>
+                        <p><a href="http://twitter.com/jewisheurope"><strong>{% trans "More Twitts" %}</strong></a></p>
                     </div>
                     <div class="item" id="cols-2fb">
-                        <p class="ftitle_b">NAVIGATE</p>
-                        <ul class="links navigate-menu"><li class="menu-789 first"><a href="/" class="menu-789 first">Main</a></li>
-                            <li class="menu-790 active"><a href="/news" class="menu-790 active">News</a></li>
-                            <li class="menu-791"><a href="http://media.eju.org/videos" class="menu-791">Video</a></li>
-                            <li class="menu-793"><a href="http://media.eju.org/pictures" class="menu-793">Photo</a></li>
-                            <li class="menu-795"><a href="http://base.eju.org" class="menu-795">EJU Base</a></li>
-                            <li class="menu-5515"><a href="http://people.eju.org" class="menu-5515">EJU People</a></li>
-                            <li class="menu-797"><a href="http://blogs.eju.org" class="menu-797">Blogs</a></li>
-                            <li class="menu-796"><a href="http://dating.eju.org" class="menu-796">Dating</a></li>
-                            <li class="menu-794"><a href="http://job.eju.org" class="menu-794">Job</a></li>
-                            <li class="menu-8589 last"><a href="/calendar" class="menu-8589 last">Calendar</a></li>
-                        </ul>		<span id="sitemap"><a href="/site-map" title="Site Map">Site Map</a></span>
-                    </div>
-                    <div class="item" id="cols-3fb">
-                        <p class="ftitle_b">OTHER</p>
-                        <ul class="links other-menu"><li class="menu-787 first"><a href="/about" class="menu-787 first">About EJU</a></li>
-                            <li class="menu-804"><a href="/feedback" class="menu-804">Contact Us</a></li>
-                            <li class="menu-802"><a href="/terms" class="menu-802">Terms and Conditions</a></li>
-                            <li class="menu-3366"><a href="/faq" class="menu-3366">FAQs</a></li>
-                            <li class="menu-3351 last"><a href="/privacy" class="menu-3351 last">Privacy Policy</a></li>
+                        <p class="ftitle_b">{% trans "NAVIGATE" %}</p>
+                        {% if LANGUAGE_CODE == 'ru' %}
+                        <ul class="links navigate-menu"><li class="menu-789 first"><a href="http://eju.org/ru" class="menu-789 first">{% trans "Main" %}</a></li>
+                            <li class="menu-790 active"><a href="http://eju.org/ru/news" class="menu-790 active">{% trans "News" %}</a></li>
+                            <li class="menu-791"><a href="http://dev.media.eju.org/ru/videos" class="menu-791">{% trans "Video" %}</a></li>
+                            <li class="menu-793"><a href="http://dev.media.eju.org/ru/albums" class="menu-793">{% trans "Photo" %}</a></li>
+                            <li class="menu-795"><a href="http://base.eju.org/ru" class="menu-795">{% trans "EJU Base" %}</a></li>
+                            <li class="menu-5515"><a href="http://people.eju.org/ru" class="menu-5515">{% trans "EJU People" %}</a></li>
+                            <li class="menu-797"><a href="http://blogs.eju.org/ru" class="menu-797">{% trans "Blogs" %}</a></li>
+                            <li class="menu-796"><a href="http://dating.eju.org" class="menu-796">{% trans "Dating" %}</a></li>
+                            <li class="menu-794"><a href="http://job.eju.org" class="menu-794">{% trans "Job" %}</a></li>
+                            <li class="menu-8589 last"><a href="http://eju.org/calendar" class="menu-8589 last">{% trans "Calendar" %}</a></li>
+                        </ul>		<span id="sitemap"><a href="http://eju.org/site-map" title="Site Map">{% trans "Site Map" %}</a></span>
+                          </div>
+                        <div class="item" id="cols-3fb">
+                        <p class="ftitle_b">{% trans "OTHER" %}</p>
+                        <ul class="links other-menu"><li class="menu-787 first"><a href="http://eju.org/ru/about" class="menu-787 first">{% trans "About EJU" %}</a></li>
+                            <li class="menu-804"><a href="http://eju.org/ru/feedback" class="menu-804">{% trans "Contact Us" %}</a></li>
+                            <li class="menu-802"><a href="http://eju.org/terms" class="menu-802">{% trans "Terms and Conditions" %}</a></li>
+                            <li class="menu-3366"><a href="http://eju.org/faq" class="menu-3366">{% trans "FAQs" %}</a></li>
+                            <li class="menu-3351 last"><a href="http://eju.org/privacy" class="menu-3351 last">{% trans "Privacy Policy" %}</a></li>
                         </ul>	</div>
-                </div>
-                <div class="copy">Copyright В© 2011-2013 EJU. All Rights Reserved</div>
-
+                      </div>
+                        {% else %}
+                        <ul class="links navigate-menu"><li class="menu-789 first"><a href="http://eju.org/" class="menu-789 first">{% trans "Main" %}</a></li>
+                            <li class="menu-790 active"><a href="http://eju.org/news" class="menu-790 active">{% trans "News" %}</a></li>
+                            <li class="menu-791"><a href="http://media.eju.org/videos" class="menu-791">{% trans "Video" %}</a></li>
+                            <li class="menu-793"><a href="http://media.eju.org/pictures" class="menu-793">{% trans "Photo" %}</a></li>
+                            <li class="menu-795"><a href="http://base.eju.org" class="menu-795">{% trans "EJU Base" %}</a></li>
+                            <li class="menu-5515"><a href="http://people.eju.org" class="menu-5515">{% trans "EJU People" %}</a></li>
+                            <li class="menu-797"><a href="http://blogs.eju.org" class="menu-797">{% trans "Blogs" %}</a></li>
+                            <li class="menu-796"><a href="http://dating.eju.org" class="menu-796">{% trans "Dating" %}</a></li>
+                            <li class="menu-794"><a href="http://job.eju.org" class="menu-794">{% trans "Job" %}</a></li>
+                            <li class="menu-8589 last"><a href="http://eju.org/calendar" class="menu-8589 last">{% trans "Calendar" %}</a></li>
+                        </ul>		<span id="sitemap"><a href="http://eju.org/site-map" title="Site Map">{% trans "Site Map" %}</a></span>
+                          </div>
+                        <div class="item" id="cols-3fb">
+                        <p class="ftitle_b">{% trans "OTHER" %}</p>
+                        <ul class="links other-menu"><li class="menu-787 first"><a href="http://eju.org/about" class="menu-787 first">{% trans "About EJU" %}</a></li>
+                            <li class="menu-804"><a href="http://eju.org/feedback" class="menu-804">{% trans "Contact Us" %}</a></li>
+                            <li class="menu-802"><a href="http://eju.org/terms" class="menu-802">{% trans "Terms and Conditions" %}</a></li>
+                            <li class="menu-3366"><a href="http://eju.org/faq" class="menu-3366">{% trans "FAQs" %}</a></li>
+                            <li class="menu-3351 last"><a href="http://eju.org/privacy" class="menu-3351 last">{% trans "Privacy Policy" %}</a></li>
+                        </ul>	</div>
+                        </div>
+                        {% endif %}
+                        
+                  
+                <div class="copy">Copyright © 2011-2013 EJU. All Rights Reserved </div>
             </div><!-- #footer -->
 
         </div><!-- #footer_bg -->

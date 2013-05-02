@@ -6,7 +6,7 @@
 <h2 class="zag">{% trans "EJU Media Albums" %}</h2>
     {% for album in albums %}
 <div class=item>
-<h2 class="zag"><a href="{% url viewalbum album.slug %}">{{ album.title }}</a></h2>
+<h2 class="zag"><a href="{% url viewalbum album.slug %}">{{ album.title|truncatechars:35 }}</a></h2>
 <a href="{% url viewalbum album.slug %}">
     {% thumbnail album.albumimage "180x134" crop="center" as im %}
         <img class="img-rounded" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">

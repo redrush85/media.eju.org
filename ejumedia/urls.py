@@ -26,6 +26,7 @@ urlpatterns = patterns('',
     url(r'^photos/$', 'main.views.getallphotos', name='viewallphotos'),
     url(r'^albums/$', 'main.views.getallalbums', name='viewallalbums'),
     url(r'^getimage/$', 'main.views.getimage', name='getimage'),
+    url(r'^ru/(?P<page>[a-zA-z]+)/$', 'main.views.langredirect'),
     
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     #url(r'^grappelli/', include('grappelli.urls')),
@@ -40,4 +41,9 @@ urlpatterns = patterns('',
     url(r'^api/', include(v1_api.urls)),
     url(r'^api-doc/', 'main.views.apibrowse', {'api': v1_api}),
     
+)
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('',
+    url(r'^rosetta/', include('rosetta.urls')),
 )

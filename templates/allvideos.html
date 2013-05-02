@@ -9,7 +9,7 @@
 <div class=item>
 <a href="{% url viewvideo video.slug %}">
 <img src="{{ video.youtube_link|youthumbnail:'l' }}"/>
-<h2 class="zag">{{ video.title|truncatechars:50 }}</h2></a>
+<h2 class="zag">{{ video.title|truncatechars:35 }}</h2></a>
 {{ video.description|truncatechars:145 }}
 </div>
     {% empty %}

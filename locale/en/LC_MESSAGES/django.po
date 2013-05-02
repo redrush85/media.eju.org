@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-03 05:57-0500\n"
+"POT-Creation-Date: 2013-04-15 05:04-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ejumedia/settings.py:39
-msgid "English"
+msgid "Russian"
 msgstr ""
 
 #: ejumedia/settings.py:40
-msgid "Russian"
+msgid "English"
 msgstr ""
 
 #: templates/allalbums.html:4 templates/base.html:6 templates/index.html:7
@@ -82,7 +82,8 @@ msgstr ""
 msgid "Sorry, no videos in this category!"
 msgstr ""
 
-#: templates/base.html:3 templates/base.html.py:8 templates/index.html:5
+#: templates/base.html:3 templates/base.html.py:8 templates/base.html:467
+#: templates/base.html.py:489 templates/index.html:5
 msgid "Main"
 msgstr ""
 
@@ -90,7 +91,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: templates/base.html:9
+#: templates/base.html:9 templates/base.html.py:476 templates/base.html:498
 msgid "Calendar"
 msgstr ""
 
@@ -98,8 +99,80 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: templates/base.html:429
+#: templates/base.html:441
 msgid "Change language"
+msgstr ""
+
+#: templates/base.html:460
+msgid "FOLLOW US ON TWITTER"
+msgstr ""
+
+#: templates/base.html:462
+msgid "More Twitts"
+msgstr ""
+
+#: templates/base.html:465
+msgid "NAVIGATE"
+msgstr ""
+
+#: templates/base.html:468 templates/base.html.py:490
+msgid "News"
+msgstr ""
+
+#: templates/base.html:469 templates/base.html.py:491
+msgid "Video"
+msgstr ""
+
+#: templates/base.html:470 templates/base.html.py:492
+msgid "Photo"
+msgstr ""
+
+#: templates/base.html:471 templates/base.html.py:493
+msgid "EJU Base"
+msgstr ""
+
+#: templates/base.html:472 templates/base.html.py:494
+msgid "EJU People"
+msgstr ""
+
+#: templates/base.html:473 templates/base.html.py:495
+msgid "Blogs"
+msgstr ""
+
+#: templates/base.html:474 templates/base.html.py:496
+msgid "Dating"
+msgstr ""
+
+#: templates/base.html:475 templates/base.html.py:497
+msgid "Job"
+msgstr ""
+
+#: templates/base.html:477 templates/base.html.py:499
+msgid "Site Map"
+msgstr ""
+
+#: templates/base.html:480 templates/base.html.py:502
+msgid "OTHER"
+msgstr ""
+
+#: templates/base.html:481 templates/base.html.py:503
+msgid "About EJU"
+msgstr ""
+
+#: templates/base.html:482 templates/base.html.py:504
+msgid "Contact Us"
+msgstr ""
+
+#: templates/base.html:483 templates/base.html.py:505
+msgid "Terms and Conditions"
+msgstr ""
+
+#: templates/base.html:484 templates/base.html.py:506
+msgid "FAQs"
+msgstr ""
+
+#: templates/base.html:485 templates/base.html.py:507
+msgid "Privacy Policy"
 msgstr ""
 
 #: templates/index.html:21

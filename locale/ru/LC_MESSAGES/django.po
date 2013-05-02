@@ -2,30 +2,30 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-03 05:57-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-04-15 05:04-0500\n"
+"PO-Revision-Date: 2013-04-15 05:04-0500\n"
+"Last-Translator:   <alex@eju.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Translated-Using: django-rosetta 0.7.1\n"
 
 #: ejumedia/settings.py:39
-msgid "English"
-msgstr ""
-
-#: ejumedia/settings.py:40
 msgid "Russian"
 msgstr "Русский"
+
+#: ejumedia/settings.py:40
+msgid "English"
+msgstr "Английский"
 
 #: templates/allalbums.html:4 templates/base.html:6 templates/index.html:7
 msgid "Albums"
@@ -42,7 +42,7 @@ msgstr "Просмотреть"
 
 #: templates/allalbums.html:19
 msgid "Sorry, no albums in this section!"
-msgstr ""
+msgstr "В этом разделе нет альбомов!"
 
 #: templates/allalbums.html:26 templates/allphotos.html:28
 #: templates/allvideos.html:20 templates/page_album.html:23
@@ -70,7 +70,7 @@ msgstr "Категория"
 
 #: templates/allphotos.html:24 templates/photo_category.html:18
 msgid "Sorry, no photos in this category!"
-msgstr ""
+msgstr "В этой категории еще нет фотографий!"
 
 #: templates/allvideos.html:4 templates/base.html:4
 msgid "Videos"
@@ -82,9 +82,10 @@ msgstr "EJU Видео"
 
 #: templates/allvideos.html:16
 msgid "Sorry, no videos in this category!"
-msgstr ""
+msgstr "В этом разделе нет видео!"
 
-#: templates/base.html:3 templates/base.html.py:8 templates/index.html:5
+#: templates/base.html:3 templates/base.html.py:8 templates/base.html:467
+#: templates/base.html.py:489 templates/index.html:5
 msgid "Main"
 msgstr "Главная"
 
@@ -92,7 +93,7 @@ msgstr "Главная"
 msgid "Categories"
 msgstr "Категории"
 
-#: templates/base.html:9
+#: templates/base.html:9 templates/base.html.py:476 templates/base.html:498
 msgid "Calendar"
 msgstr "Календарь"
 
@@ -100,9 +101,81 @@ msgstr "Календарь"
 msgid "About"
 msgstr "О Нас"
 
-#: templates/base.html:429
+#: templates/base.html:441
 msgid "Change language"
 msgstr "Изменить язык"
+
+#: templates/base.html:460
+msgid "FOLLOW US ON TWITTER"
+msgstr "Найдите нас в Твиттере"
+
+#: templates/base.html:462
+msgid "More Twitts"
+msgstr "Больше Твитов"
+
+#: templates/base.html:465
+msgid "NAVIGATE"
+msgstr "Навигация"
+
+#: templates/base.html:468 templates/base.html.py:490
+msgid "News"
+msgstr "Новости"
+
+#: templates/base.html:469 templates/base.html.py:491
+msgid "Video"
+msgstr "Видео"
+
+#: templates/base.html:470 templates/base.html.py:492
+msgid "Photo"
+msgstr "Фото"
+
+#: templates/base.html:471 templates/base.html.py:493
+msgid "EJU Base"
+msgstr "EJU База"
+
+#: templates/base.html:472 templates/base.html.py:494
+msgid "EJU People"
+msgstr "EJU Люди"
+
+#: templates/base.html:473 templates/base.html.py:495
+msgid "Blogs"
+msgstr "Блоги"
+
+#: templates/base.html:474 templates/base.html.py:496
+msgid "Dating"
+msgstr "Знакомства"
+
+#: templates/base.html:475 templates/base.html.py:497
+msgid "Job"
+msgstr "Работа"
+
+#: templates/base.html:477 templates/base.html.py:499
+msgid "Site Map"
+msgstr "Карта сайта"
+
+#: templates/base.html:480 templates/base.html.py:502
+msgid "OTHER"
+msgstr "ДРУГОЕ"
+
+#: templates/base.html:481 templates/base.html.py:503
+msgid "About EJU"
+msgstr "О Нас"
+
+#: templates/base.html:482 templates/base.html.py:504
+msgid "Contact Us"
+msgstr "Обратная Связь"
+
+#: templates/base.html:483 templates/base.html.py:505
+msgid "Terms and Conditions"
+msgstr ""
+
+#: templates/base.html:484 templates/base.html.py:506
+msgid "FAQs"
+msgstr "ЧАВо"
+
+#: templates/base.html:485 templates/base.html.py:507
+msgid "Privacy Policy"
+msgstr ""
 
 #: templates/index.html:21
 msgid "More Albums"
@@ -126,7 +199,7 @@ msgstr "Больше Фотографий"
 
 #: templates/page_album.html:19
 msgid "Sorry, no photos in this album!"
-msgstr ""
+msgstr "В этом альбоме нет фотографий"
 
 #: templates/page_photo.html:12 templates/page_video.html:12
 msgid "Tags"
@@ -134,11 +207,11 @@ msgstr "Тэги"
 
 #: templates/page_photo.html:17
 msgid "Photo it not allowed by moderator"
-msgstr ""
+msgstr "Фото заблокировано модератором"
 
 #: templates/page_video.html:16
 msgid "Video it not allowed by moderator"
-msgstr ""
+msgstr "Видео заблокировано модератором"
 
 #: templates/search/search.html:5
 msgid "Search"
