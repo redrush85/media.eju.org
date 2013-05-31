@@ -11,6 +11,7 @@
     {% for tag in video.tags.all %}
         {% if forloop.first %}{% trans "Tags" %}: {{ tag.word }}{% else %}, {{ tag.word }}{% endif %}
     {% endfor %}
+    {% include "social.html" %}
   {% else %}
     <div class="page-header">
         <h1>{% trans "Video it not allowed by moderator" %}</h1>
